@@ -1,11 +1,18 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   const reduce = useReducedMotion();
-  if (reduce) return null;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (mounted && reduce) return null;
 
   return (
     <motion.div

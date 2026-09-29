@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 export function Reveal({
   children,
@@ -13,7 +13,14 @@ export function Reveal({
   delay?: number;
 }) {
   const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const shouldReduce = mounted && reduce;
+  if (shouldReduce) return <div className={className}>{children}</div>;
 
   return (
     <motion.div

@@ -31,9 +31,9 @@ export default function WorkIndexPage() {
                 key={project.slug}
                 className="grid overflow-hidden rounded-[1.8rem] border border-ink/10 bg-foam md:grid-cols-[0.8fr_1.2fr]"
               >
-                <Link href={`/work/${project.slug}`} className="min-h-64">
+                {/* <Link href={`/work/${project.slug}`} className="min-h-64">
                   <ProjectVisual title={project.title} index={index} className="h-full min-h-64" />
-                </Link>
+                </Link> */}
                 <div className="flex flex-col p-7 sm:p-10">
                   <p className="eyebrow text-muted">{project.eyebrow}</p>
                   <h2 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{project.title}</h2>

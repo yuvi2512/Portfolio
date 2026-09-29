@@ -47,8 +47,8 @@ export function Terrain() {
 
   return (
     <div className="absolute inset-0" aria-hidden>
-      <StaticLandscape />
-      {live ? <Scene /> : null}
+    <StaticLandscape />
+     <Scene/>
     </div>
   );
 }

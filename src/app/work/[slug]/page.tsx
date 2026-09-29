@@ -83,15 +83,6 @@ export default async function ProjectPage({ params }: Props) {
             </div>
           </header>
 
-          <div className="px-5 sm:px-8">
-            <div className="mx-auto max-w-[76rem] overflow-hidden rounded-[2rem]">
-              <ProjectVisual
-                title={project.title}
-                index={index}
-                className="min-h-[22rem] sm:min-h-[28rem]"
-              />
-            </div>
-          </div>
 
           <div className="mx-auto mt-14 grid max-w-[76rem] gap-12 px-5 sm:px-8 lg:grid-cols-[1.4fr_0.6fr]">
             <ol className="space-y-8">
