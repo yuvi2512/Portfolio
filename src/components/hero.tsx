@@ -31,12 +31,12 @@ export function Hero() {
             View the work
             <ArrowIcon />
           </Link>
-          <a
+          {/* <a
             href={profile.resume}
             className="inline-flex items-center rounded-full border border-paper/25 px-5 py-3 font-semibold text-paper transition-colors hover:border-accent hover:text-accent"
           >
             Resume
-          </a>
+          </a> */}
           <a href={profile.github} className="link-underline px-2 py-3 text-sm text-paper/70" target="_blank" rel="noreferrer">
             GitHub
           </a>

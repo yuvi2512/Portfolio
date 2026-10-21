@@ -55,14 +55,14 @@ export function Nav() {
               {item.label}
             </Link>
           ))}
-          <a
+          {/* <a
             href={profile.resume}
             className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
               light ? "bg-accent text-ink" : "bg-ink text-paper"
             }`}
           >
             Resume
-          </a>
+          </a> */}
         </nav>
         <button
           type="button"
@@ -94,9 +94,9 @@ export function Nav() {
                 {item.label}
               </Link>
             ))}
-            <a href={profile.resume} className="mt-8 inline-flex w-fit rounded-full bg-accent px-5 py-3 font-semibold text-ink">
+            {/* <a href={profile.resume} className="mt-8 inline-flex w-fit rounded-full bg-accent px-5 py-3 font-semibold text-ink">
               Resume
-            </a>
+            </a> */}
           </motion.nav>
         ) : null}
       </AnimatePresence>
