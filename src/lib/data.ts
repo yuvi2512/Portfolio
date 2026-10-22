@@ -63,6 +63,11 @@ export const experience = [
 export type Project = {
   slug: string;
   title: string;
+  image: {
+    src: string;
+    width: number;
+    height: number;
+  };
   eyebrow: string;
   summary: string;
   place: string;
@@ -76,6 +81,7 @@ export const projects: Project[] = [
   {
     slug: "learn-linker",
     title: "Learn Linker",
+    image: { src: "/Learn.png", width: 1920, height: 940 },
     eyebrow: "Selected work 01",
     place: "Role-based learning platform",
     summary:
@@ -101,6 +107,7 @@ export const projects: Project[] = [
   {
     slug: "erp-saas",
     title: "ERP & SaaS platforms",
+    image: { src: "/ERP.png", width: 1920, height: 960 },
     eyebrow: "Selected work 02",
     place: "Express Solution Labs · Indore",
     summary:

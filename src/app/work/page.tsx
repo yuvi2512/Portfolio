@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function WorkIndexPage() {
   return (
     <>
-      <Nav />
+      <Nav initialOnHero={false} />
       <main className="bg-paper px-5 pb-24 pt-32 sm:px-8">
         <div className="mx-auto max-w-[76rem]">
           <p className="eyebrow text-muted">Work</p>
@@ -26,14 +26,17 @@ export default function WorkIndexPage() {
             Express Solution Labs.
           </p>
           <div className="mt-12 grid gap-6">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <article
                 key={project.slug}
-                className="grid overflow-hidden rounded-[1.8rem] border border-ink/10 bg-foam md:grid-cols-[0.8fr_1.2fr]"
+                className="grid items-start overflow-hidden rounded-[1.8rem] border border-ink/10 bg-foam md:grid-cols-[0.8fr_1.2fr]"
               >
-                {/* <Link href={`/work/${project.slug}`} className="min-h-64">
-                  <ProjectVisual title={project.title} index={index} className="h-full min-h-64" />
-                </Link> */}
+                <Link href={`/work/${project.slug}`} className="block">
+                  <ProjectVisual
+                    title={project.title}
+                    image={project.image}
+                  />
+                </Link>
                 <div className="flex flex-col p-7 sm:p-10">
                   <p className="eyebrow text-muted">{project.eyebrow}</p>
                   <h2 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{project.title}</h2>

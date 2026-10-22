@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Mark } from "./icons";
 
-export function Nav() {
-  const [onHero, setOnHero] = useState(true);
+export function Nav({ initialOnHero = true }: { initialOnHero?: boolean }) {
+  const [onHero, setOnHero] = useState(initialOnHero);
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
 

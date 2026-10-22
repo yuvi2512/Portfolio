@@ -21,10 +21,13 @@ export function Work() {
         </Reveal>
 
         <Reveal className="mt-12">
-          <article className="grid items-stretch gap-8 lg:grid-cols-12">
+          <article className="grid items-start gap-8 lg:grid-cols-12">
             <Tilt className="lg:col-span-7">
-              <Link href={`/work/${featured.slug}`} className="block h-full overflow-hidden rounded-[1.8rem]">
-                <ProjectVisual title={featured.title} index={0} className="min-h-[28rem]" />
+              <Link href={`/work/${featured.slug}`} className="block overflow-hidden rounded-[1.8rem]">
+                <ProjectVisual
+                  title={featured.title}
+                  image={featured.image}
+                />
               </Link>
             </Tilt>
             <div className="flex flex-col justify-between lg:col-span-5">
@@ -57,28 +60,28 @@ export function Work() {
         </Reveal>
 
         <div className="mt-8 grid gap-6">
-          {rest.map((project) => {
-            const index = projects.findIndex((item) => item.slug === project.slug);
-            return (
-              <Reveal key={project.slug}>
-                <article className="grid overflow-hidden rounded-[1.8rem] border border-ink/10 bg-foam md:grid-cols-[0.72fr_1.28fr]">
-                  <Link href={`/work/${project.slug}`} className="block min-h-64">
-                    <ProjectVisual title={project.title} index={index} className="h-full min-h-64" />
+          {rest.map((project) => (
+            <Reveal key={project.slug}>
+              <article className="grid items-start overflow-hidden rounded-[1.8rem] border border-ink/10 bg-foam md:grid-cols-[0.72fr_1.28fr]">
+                <Link href={`/work/${project.slug}`} className="block">
+                  <ProjectVisual
+                    title={project.title}
+                    image={project.image}
+                  />
+                </Link>
+                <div className="flex flex-col p-7 sm:p-8">
+                  <p className="eyebrow text-muted">{project.eyebrow}</p>
+                  <h3 className="mt-2 font-serif text-3xl font-semibold tracking-tight">{project.title}</h3>
+                  <p className="mt-2 text-sm text-muted">{project.place}</p>
+                  <p className="mt-4 max-w-xl leading-relaxed text-ink/80">{project.summary}</p>
+                  <Link href={`/work/${project.slug}`} className="mt-6 inline-flex items-center gap-2 font-semibold">
+                    Read the case study
+                    <ArrowIcon />
                   </Link>
-                  <div className="flex flex-col p-7 sm:p-8">
-                    <p className="eyebrow text-muted">{project.eyebrow}</p>
-                    <h3 className="mt-2 font-serif text-3xl font-semibold tracking-tight">{project.title}</h3>
-                    <p className="mt-2 text-sm text-muted">{project.place}</p>
-                    <p className="mt-4 max-w-xl leading-relaxed text-ink/80">{project.summary}</p>
-                    <Link href={`/work/${project.slug}`} className="mt-6 inline-flex items-center gap-2 font-semibold">
-                      Read the case study
-                      <ArrowIcon />
-                    </Link>
-                  </div>
-                </article>
-              </Reveal>
-            );
-          })}
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

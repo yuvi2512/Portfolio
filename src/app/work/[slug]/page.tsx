@@ -35,7 +35,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      <Nav />
+      <Nav initialOnHero={false} />
       <main className="bg-paper pb-24">
         <article>
           <header className="px-5 pb-10 pt-32 sm:px-8">
